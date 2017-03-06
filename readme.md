@@ -1,6 +1,6 @@
 MEAN - March 2017
 ====================
-I <3 JavaScript!!
+I :heart: JavaScript!!
 
 # Setup
  1. Fork this repo to your github account.
