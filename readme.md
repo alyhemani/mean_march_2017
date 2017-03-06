@@ -16,7 +16,7 @@ Please commit daily. That way we can provide you with feedback :) or just a thum
 https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.pdf
 
 # Videos
-Coming soon...
+[Callbacks and JS History Lesson](https://www.youtube.com/watch?v=6WNDuB-KMBY "Callbacks and JS History Lesson") <br>
 
 # Schedule
 
