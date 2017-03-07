@@ -17,6 +17,7 @@ https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.p
 
 # Videos
 [Callbacks and JS History Lesson](https://www.youtube.com/watch?v=6WNDuB-KMBY "Callbacks and JS History Lesson") <br>
+[JavaScript - OOP](https://youtu.be/YSRxJUySC24 "JavaScript - OOP") <br>
 
 # Schedule
 
