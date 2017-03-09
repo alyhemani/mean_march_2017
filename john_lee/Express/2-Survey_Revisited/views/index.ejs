@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form Page</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src='/socket.io/socket.io.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function (){
+          var socket = io.connect();
+          $('form').submit(function(){
+            var users = {name: $('#name').val(),
+                        location:$('#location').val(),
+                        language:$('#language').val(),
+                        comment:$('#comment').val()}
+            socket.emit('survey_form', users)
+            return false
+          })
+          socket.on('display_info', function(message){
+            console.log(message)
+            $('#emit').html(message)
+          })
+        })
+    </script>
+  </head>
+  <body>
+
+    <h1>The Dojo Survey</h1>
+    <div id='emit'>
+
+    </div>
+    <form>
+      <h3>Your Name: <input type='text' id='name' name='name'></h3>
+      <h3>Dojo Location:</h3>
+        <select id='location' name='location'>
+          <option>Dallas</option>
+          <option>San Francisco</option>
+          <option>Seattle</option>
+          <option >Other</option>
+        </select>
+      <h3>Favorite Language:</h3>
+        <select id='language' name='language'>
+          <option>Python</option>
+          <option >Ruby</option>
+          <option>C++</option>
+          <option>Other</option>
+        </select>
+      <h3>Comment (optional):<input type="text" id='comment' name='comment'></h3>
+      <input type="submit" value = "Submit">
+    </form>
+
+  </body>
+</html>
