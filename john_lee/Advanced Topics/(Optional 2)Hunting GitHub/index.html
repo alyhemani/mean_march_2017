@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type='text/javascript' src='bower_components/jquery/dist/jquery.min.js'></script>
+    <script type='text/javascript'>
+      $(document).ready(function(){
+        $("button").click(function(){
+          $.get("https://api.github.com/users/jjl2599", displayName)
+          function displayName(data) {
+            var html_str = '';
+            html_str +=   '<p>' + data.name + '</p>';
+            console.log(data);
+          $('.displayName').append(html_str);
+          }
+        });
+      });
+    </script>
+
+    <title>Hunting Github</title>
+  </head>
+  <body>
+    <button class="the_button">My Github Name</button>
+    <div class="displayName"></div>
+  </body>
+</html>
