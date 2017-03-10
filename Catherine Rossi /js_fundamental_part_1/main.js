@@ -8,8 +8,10 @@ x.push("hello", "world", "JavaScript is Fun");
 console.log(x);
 for(var i=1;i<=500;i++) {
     sum = sum + i;
-    console.log(sum);
+    
 }
+	console.log(sum);
+	
 var arr = [1, 5, 90, 25, -3, 0];
 var min=arr[0];
 var sum=0;
