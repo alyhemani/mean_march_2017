@@ -19,6 +19,7 @@ https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.p
 [Callbacks and JS History Lesson](https://www.youtube.com/watch?v=6WNDuB-KMBY "Callbacks and JS History Lesson") <br>
 [JavaScript - OOP](https://youtu.be/YSRxJUySC24 "JavaScript - OOP") <br>
 [MEAN - Intro to Express](https://youtu.be/trQnTx1d3UI "MEAN - Intro to Express") <br>
+[MEAN - Intro to Mongoose](https://youtu.be/M6BQMW9rHt4 "MEAN - Intro to Mongoose") <br>
 
 # Schedule
 
