@@ -20,6 +20,7 @@ https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.p
 [JavaScript - OOP](https://youtu.be/YSRxJUySC24 "JavaScript - OOP") <br>
 [MEAN - Intro to Express](https://youtu.be/trQnTx1d3UI "MEAN - Intro to Express") <br>
 [MEAN - Intro to Mongoose](https://youtu.be/M6BQMW9rHt4 "MEAN - Intro to Mongoose") <br>
+[MEAN - Server-Side Modularization](https://youtu.be/hoGRlhdIC84 "MEAN - Server-Side Modularization") <br>
 
 # Schedule
 
