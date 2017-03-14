@@ -1,0 +1,108 @@
+<html ng-app='myApp'>
+  <head>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+    <script type='text/javascript'>
+      var myApp = angular.module('myApp', []);
+      myApp.factory('productFactory', function(){
+          var products = [];
+          var factory = {};
+          factory.getProducts = function (callback){
+            callback(products);
+          }
+
+          factory.addProduct = function(newProduct, callback){
+            products.push(newProduct);
+            callback(products);
+          }
+
+          factory.deleteProduct = function(index, callback){
+            products.splice(index, 1);
+            callback(products);
+          }
+
+          factory.buyProduct = function(index, callback){
+            if (products[index].quantity > 0){
+              products[index].quantity--;
+              callback(products);
+            }
+          }
+
+          return factory;
+      });
+
+      myApp.controller('productsController',['$scope', 'productFactory', function ($scope, productFactory){
+        $scope.products = [];
+
+        productFactory.getProducts(function (data){
+          $scope.products = data;
+        })
+
+        $scope.addProduct = function(newProduct){
+          productFactory.addProduct(newProduct, function(data) {
+            $scope.products = data;
+            newProduct.quantity = 40;
+            $scope.newProduct = {};
+          })
+        }
+
+        $scope.deleteProduct = function(index){
+          productFactory.deleteProduct(index, function(data) { $scope.products = data })
+        }
+      }]);
+
+      myApp.controller('ordersController',['$scope', 'productFactory', function ($scope, productFactory){
+        $scope.products = [];
+        productFactory.getProducts(function(data) {
+            $scope.products = data
+        });
+        $scope.buyProduct = function(index){
+            productFactory.buyProduct(index, function(data) { $scope.products = data })
+        }
+      }])
+
+    </script>
+  </head>
+  <body>
+    <div ng-controller='productsController'>
+      <h2>Add a Product</h2>
+      <form>
+         Name: <input type='text' ng-model='newProduct.name'>
+         Price: <input type='text' ng-model='newProduct.price'>
+         <input type='submit' value='Create Product' ng-click='addProduct(newProduct)'>
+      </form>
+      Find a Product to Delete: <input type="search" ng-model="q" placeholder="Filter...">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+        <tr ng-repeat="product in products | filter:q">
+          <td>{{ product.name }}</td>
+          <td>${{ product.price }}</td>
+          <td><button ng-click='deleteProduct($index)'>Delete Product</button></td>
+        </tr>
+      </table>
+    </div>
+
+    <div ng-controller='ordersController'>
+      <h2>Order a Product</h2>
+      <p>Find a Product: <input type="search" ng-model="t" placeholder="Filter..."></p>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+        <tr ng-repeat="product in products | filter:t">
+          <td>{{ product.name }}</td>
+          <td>${{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+          <td><button ng-click = "buyProduct($index);">Buy Product</button></td>
+        </tr>
+      </table>
+    </div>
+
+  </body>
+</html>
