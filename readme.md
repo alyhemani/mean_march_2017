@@ -22,6 +22,10 @@ https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.p
 [MEAN - Intro to Mongoose](https://youtu.be/M6BQMW9rHt4 "MEAN - Intro to Mongoose") <br>
 [MEAN - Server-Side Modularization](https://youtu.be/hoGRlhdIC84 "MEAN - Server-Side Modularization") <br>
 [MEAN - 1955 JSON API](https://youtu.be/wKHNuUxW5ek "MEAN - 1955 JSON API") <br>
+[MEAN - Intro to Angular](https://www.youtube.com/edit?o=U&video_id=bN4tjw95Juc "MEAN - Intro to Angular") <br>
+[MEAN - Angular Factories](https://www.youtube.com/edit?o=U&video_id=acn5VKB4Myk "MEAN - Angular Factories") <br>
+[MEAN - Angular Routes and $scope vs. this](https://www.youtube.com/edit?o=U&video_id=qJvmVki4OvU "MEAN - Angular Routes and $scope vs. this") <br>
+
 
 # Schedule
 
