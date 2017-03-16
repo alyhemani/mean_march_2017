@@ -1,0 +1,18 @@
+<div ng-controller='CustomizeController'>
+  <a href="#!/customize">Customize User</a>
+  <a href="#!/list">User List</a>
+ <table>
+  <thead>
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Language</td>
+    <tr>
+  </thead>
+    <tr ng-repeat = "user in users">
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.language}}</td>
+    </tr>
+</table>
+</div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <title>Users</title>
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script>
+      var myApp = angular.module('myApp', ['ngRoute']);
+      myApp.config(function ($routeProvider) {
+      $routeProvider
+        .when('/',{
+            templateUrl: 'partials/customize.html',
+        })
+        .when('/customize',{
+            templateUrl: 'partials/customize.html'
+        })
+        .when('/list',{
+            templateUrl: 'partials/userlist.html'
+        })
+        .otherwise({
+          redirectTo: '/'
+        });
+      });
+      myApp.factory('usersFactory', function(){
+          var users = [
+            {first_name: 'John', last_name: 'Lee', language: 'JavaScript'}
+          ];
+          var factory = {};
+          factory.getUsers = function (callback){
+            callback(users);
+          }
+
+          factory.addUser = function(newUser, callback){
+            newUser.date = new Date();
+            users.push(newUser);
+            callback(users);
+          }
+
+          factory.deleteUser = function(index, callback){
+            users.splice(index, 1);
+            callback(users);
+          }
+
+          return factory;
+      });
+      //  build the controllers
+      myApp.controller('CustomizeController',['$scope', 'usersFactory', function ($scope, usersFactory){
+        $scope.users = [];
+
+        usersFactory.getUsers(function(data){
+          $scope.users = data;
+        })
+
+        $scope.addUser = function(newUser){
+          usersFactory.addUser(newUser, function(data) {
+            $scope.users = data;
+            $scope.newUser = {};
+          })
+        }
+
+        $scope.deleteUser = function(index){
+          usersFactory.deleteUser(index, function(data) { $scope.users = data })
+        }
+
+      }]);
+    </script>
+  </head>
+  <body>
+    <div ng-app='myApp'>
+      </div>
+      <div ng-view="">
+      <a href="#!/customize">Customize User</a>
+      <a href="#!/list">User List</a>
+    </div>
+  </body>
+</html>

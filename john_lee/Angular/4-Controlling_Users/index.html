@@ -1,0 +1,48 @@
+<html ng-app='myApp'>
+  <head>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+    <script type='text/javascript'>
+       var myAppModule = angular.module('myApp', []);
+       myAppModule.controller('usersController', function ($scope){
+        $scope.users = [
+        ];
+        $scope.addUser = function(newUser){
+          var today = $filter('date')(new Date(),'yyyy-MM-dd HH:mm:ss Z');
+          newUser.date = new Date();
+          console.log(newUser)
+          $scope.users.push(newUser);
+        }
+        $scope.deleteUser = function(index){
+           $scope.users.splice(index, 1);
+         }
+      });
+    </script>
+  </head>
+  <body>
+    <div ng-controller='usersController'>
+      <form>
+         First Name: <input type='text' ng-model='newUser.first_name'>
+         Last Name: <input type='text' ng-model='newUser.last_name'>
+         Language: <input type='text' ng-model='newUser.language'>
+         <input type='submit' value='Create User' ng-click='addUser(newUser)'>
+      </form>
+      Find a User: <input type="search" ng-model="q" placeholder="Filter...">
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Language</th>
+          <th>Created Date</th>
+          <th>Actions</th>
+        </tr>
+        <tr ng-repeat="user in users | filter:q as results">
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.language }}</td>
+          <td>{{ user.date }}</td>
+          <td><button ng-click='deleteUser($index)'>Delete User</button></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
