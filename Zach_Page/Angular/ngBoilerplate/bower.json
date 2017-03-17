@@ -1,9 +1,9 @@
 {
-  "name": "secondAngular",
+  "name": "AngularFSboilerplate",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "authors": [
-    "Zach Page <zap.freelance@gmail.com>"
+    "pageza <zap.freelance@gmail.com>"
   ],
   "license": "ISC",
   "homepage": "https://github.com/pageza/mean_march_2017",
@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.6.3",
-    "angular-route": "^1.6.3"
+    "angular": "^1.6.3"
   }
 }
