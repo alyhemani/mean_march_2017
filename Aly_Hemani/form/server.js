@@ -25,6 +25,6 @@ app.post('/', function(req, res){
 	res.render('results', {name: req.body.name, location: req.body.location, language: req.body.language, comment: req.body.comment});
 });
 
-var server = app.listen(8000, function(){
+app.listen(8000, function(){
 	console.log('listening on port 8000');
 });
