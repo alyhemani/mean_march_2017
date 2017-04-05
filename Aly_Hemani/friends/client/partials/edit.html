@@ -1,0 +1,20 @@
+<div>
+	<form ng-submit="UC.edit(user)" method="post">
+		<div ng-init="UC.show()">
+			<label>First Name:</label>
+			<input type="text" ng-model="user.first_name" ng-value="UC.user.first_name">
+		</div>
+		<div>
+			<label>Last Name:</label>
+			<input type="text" ng-model="user.last_name" ng-value="UC.user.last_name">
+		</div>
+		<div>
+			<label>Birthday:</label>
+			<input type="date" ng-model="user.birthday" ng-value="UC.user.birthday | date: 'yyyy-MM-dd'">
+		</div>
+		<div>
+			<input type="submit" value="Update User">
+		</div>
+	</form>
+	<p ng-repeat="error in UC.error">{{error}}</p>
+</div>

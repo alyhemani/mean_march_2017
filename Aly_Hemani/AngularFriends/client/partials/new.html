@@ -1,0 +1,13 @@
+<div  ng-controller="newController">
+  <a href="#!/">Home</a>
+<form ng-submit="create()">
+  <h1>New Friend</h1>
+  <label>First Name</label>
+  <input type="text" ng-model = "newfriend.fname">
+  <label>Last Name</label>
+  <input type="text" ng-model="newfriend.lname">
+  <label>Birthday</label>
+  <input type="date" ng-model="newfriend.bday">
+  <input type="submit" name="" value="Create Friend">
+</form>
+</div>

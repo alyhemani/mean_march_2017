@@ -1,0 +1,10 @@
+<form ng-controller="editController" ng-submit="update()" method="post">
+  <a href="#!/">Home</a>
+  <label ng-init="show()">First Name</label>
+  <input type="text" ng-model ="friend.fname" value="friend.fname">
+  <label>Last Name</label>
+  <input type="text" ng-model="friend.lname" value="friend.lname">
+  <label>Birthday</label>
+  <input type="date" ng-model="friend.bday">
+  <input type="submit" name="" value="Edit User">
+</form>

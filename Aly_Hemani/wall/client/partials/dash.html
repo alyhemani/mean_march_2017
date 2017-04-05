@@ -1,0 +1,13 @@
+<div ng-controller="PostController">
+	<h1>Welcome {{PC.current_user.first_name}}&nbsp;{{PC.current_user.last_name}}</h1>
+	<a href="" ng-click="PC.logout()">Logout</a>
+  <form ng-submit="PC.post(newPost)">
+    <div>
+      <label>Post a message:</label>
+      <textarea ng-model="PC.newPost.text"></textarea>
+    </div>
+    <div>
+      <input type="submit" value="Submit post">
+    </div>
+  </form>
+</div>

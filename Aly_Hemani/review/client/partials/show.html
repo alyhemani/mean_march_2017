@@ -1,0 +1,42 @@
+<div ng-controller = "TopicsController as TC">
+	<h3>Welcome {{UC.current_user.name}}</h3>
+	<div ng-init="TC.show()">
+		<div>
+			<a href="">{{TC.topic.author}}</a> posted a topic:
+		</div>
+		<div>
+			<b>{{TC.topic.topic}}</b>
+		</div>
+		<div>
+			description: {{TC.topic.description}}
+		</div>
+		<div ">
+			<h4>Post your answer here...</h4>
+			<form ng-submit="TC.createPost(TC.newPost, TC.topic._id)">
+				<div>
+					<textarea ng-model="TC.newPost.post"></textarea>
+				</div>
+				<div>
+					<input type="submit" value="Add Post">
+				</div>
+			</form>
+			<div ng-repeat="post in TC.topic.posts">
+				<p>{{post.post}}</p>
+				<div>likes: {{post.likes}} dislikes: {{post.dislikes}}</div>
+				<button ng-click="TC.like(post._id)">Like</button>
+				<button ng-click="TC.dislike(post._id)" >Dislike</button>
+				<div>
+					<form ng-submit="TC.createComment(post)">
+						<div>
+							<label>Comment</label>
+							<input type="text" ng-model="post.comment">
+						</div>
+						<div>
+							<input type="submit" value="Add Comment">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
